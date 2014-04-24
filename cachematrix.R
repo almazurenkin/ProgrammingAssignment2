@@ -33,8 +33,9 @@ cacheSolve <- function(x, ...) {
                 message("Using cached data")
 
         } else { # if inverse isn't cached - calculate, assign to 'inverse' and cache
-                x$setinverse(inverse <- solve(x$get()))
+                inverse <- solve(x$get())
+                x$setinverse(inverse)
         }
         
-        inverse
+        inverse # returns inverse
 }
